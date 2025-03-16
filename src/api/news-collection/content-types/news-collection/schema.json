@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_collections",
+  "info": {
+    "singularName": "news-collection",
+    "pluralName": "news-collections",
+    "displayName": "NewsCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
