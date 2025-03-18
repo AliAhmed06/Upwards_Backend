@@ -1,17 +1,13 @@
-export default ({ env }) => ({
-  auth: {
-    secret: env('ADMIN_JWT_SECRET'),
-  },
+module.exports = {
   apiToken: {
-    salt: env('API_TOKEN_SALT'),
+    salt: process.env.API_TOKEN_SALT || "random-secret-salt",
   },
-  transfer: {
-    token: {
-      salt: env('TRANSFER_TOKEN_SALT'),
+  auth: {
+    secret: process.env.ADMIN_JWT_SECRET || "random-secret-key",
+  },
+  settings: {
+    contentTypeBuilder: {
+      enabled: true, // Enable Content Type Builder in production
     },
   },
-  flags: {
-    nps: env.bool('FLAG_NPS', true),
-    promoteEE: env.bool('FLAG_PROMOTE_EE', true),
-  },
-});
+};
